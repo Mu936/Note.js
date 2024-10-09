@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const NotesList = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-    setNotes(savedNotes);
+    const fetchNotes = async () => {
+      const response = await axios.get('http://localhost:5000/notes');
+      setNotes(response.data);
+    };
+    fetchNotes();
   }, []);
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:5000/notes/${id}`);
+    setNotes(notes.filter(note => note.id !== id));
+  };
 
   return (
     <div>
       <h2>Your Notes</h2>
-      <Link to="/note/new">Create New Note</Link>
       <ul>
         {notes.map(note => (
           <li key={note.id}>
             <h3>{note.title}</h3>
             <p>{note.content}</p>
+            <button onClick={() => handleDelete(note.id)}>Delete</button>
           </li>
         ))}
       </ul>
