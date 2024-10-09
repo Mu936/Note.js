@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 
 const NoteEditor = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSave = async () => {
     const newNote = { title, content };
     await axios.post('http://localhost:5000/notes', newNote);
-    history.push('/'); // Redirect to notes list
+    navigate('/'); // Redirect to notes list after saving
   };
 
   return (
     <div>
-      <h2>Create Note</h2>
+      <h1>Create Note</h1>
       <input 
         type="text" 
         value={title} 
         onChange={(e) => setTitle(e.target.value)} 
-        placeholder="Note Title" 
+        placeholder="Title" 
       />
       <textarea 
         value={content} 
         onChange={(e) => setContent(e.target.value)} 
-        placeholder="Note Content" 
+        placeholder="Content" 
       />
       <button onClick={handleSave}>Save</button>
     </div>
@@ -33,5 +33,3 @@ const NoteEditor = () => {
 };
 
 export default NoteEditor;
-
-
