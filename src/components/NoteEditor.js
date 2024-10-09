@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
-const NoteEditor = ({ match, history }) => {
+const NoteEditor = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const history = useHistory();
 
-  const handleSave = () => {
-    const newNote = { id: Date.now(), title, content };
-    const existingNotes = JSON.parse(localStorage.getItem('notes')) || [];
-    localStorage.setItem('notes', JSON.stringify([...existingNotes, newNote]));
+  const handleSave = async () => {
+    const newNote = { title, content };
+    await axios.post('http://localhost:5000/notes', newNote);
     history.push('/'); // Redirect to notes list
   };
 
   return (
     <div>
-      <h2>Edit Note</h2>
+      <h2>Create Note</h2>
       <input 
         type="text" 
         value={title} 
@@ -31,3 +33,5 @@ const NoteEditor = ({ match, history }) => {
 };
 
 export default NoteEditor;
+
+
