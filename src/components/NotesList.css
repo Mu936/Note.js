@@ -1,0 +1,11 @@
+/* src/components/NotesList.css */
+
+.notes-container {
+    text-align: center; /* Center the text */
+}
+
+.notes-image {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Space around the image */
+}
