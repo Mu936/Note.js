@@ -1,21 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import UserProfile from './components/UserProfile';
+import Header from './components/Header';
+import NotesList from './components/NotesList';
+import NoteEditor from './components/NoteEditor';
+import Login from './components/Login';
 
-const App = () => {
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/profile" element={<UserProfile />} />
-            </Routes>
-        </Router>
-    );
-};
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<NotesList />} />
+        <Route path="/note/:id" element={<NoteEditor />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
