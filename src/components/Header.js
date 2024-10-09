@@ -7,7 +7,7 @@ const Header = () => {
       <h1>Note Taking App</h1>
       <nav>
         <Link to="/">Home</Link>
-        <p> take</p>
+        
         <Link to="/login">Login</Link>
       </nav>
     </header>
