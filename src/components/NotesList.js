@@ -12,6 +12,7 @@ const NotesList = () => {
   return (
     <div>
       <h2>Your Notes</h2>
+      
       <Link to="/note/new">Create New Note</Link>
       <ul>
         {notes.map(note => (
