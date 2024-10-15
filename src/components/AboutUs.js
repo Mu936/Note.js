@@ -1,5 +1,5 @@
 import React from 'react';
-
+import picture from '../picture.jpg';
 
 const AboutUs = () => {
   return (
@@ -13,6 +13,7 @@ const AboutUs = () => {
       <p style={styles.italicParagraph}>
         "Capture your thoughts, organize your ideas, and unleash your creativity."
       </p>
+      <img src={picture} alt="About Us" style={styles.image} />
     </div>
   );
 };
@@ -25,7 +26,7 @@ const styles = {
     alignItems: 'center',
     height: '100vh',
     
-    backgroundColor: '#pink', // Light background color
+    backgroundColor: '#pink', 
     textAlign: 'center',
     padding: '20px',
     transition: 'background-color 0.5s ease',
@@ -34,20 +35,27 @@ const styles = {
     fontSize: '36px',
     color: '#333', // Dark text color
     marginBottom: '20px',
-    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)', // Subtle shadow effect
+    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)', 
   },
   paragraph: {
     fontSize: '18px',
     color: '#555', // Medium gray text
     marginBottom: '20px',
   },
+  image: {
+    width: '250px', 
+    height: 'auto', 
+    
+  },
+
   italicParagraph: {
     fontSize: '20px',
-    color: '#ff69b4', // Pink color for the italic paragraph
+    color: '#ff69b4', 
     fontStyle: 'italic',
     transition: 'transform 0.3s ease',
     '&:hover': {
-      transform: 'scale(1.05)', // Scale effect on hover
+      transform: 'scale(1.05)', 
+    
     },
   },
 };
