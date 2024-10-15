@@ -39,11 +39,11 @@ const logoContainer = {
   marginBottom: '10px',
 };
 
-const logoStyle = {
-  width: '50px', // Adjust size as needed
-  height: '50px',
-  marginRight: '10px',
-};
+// const logoStyle = {
+//   width: '50px', // Adjust size as needed
+//   height: '50px',
+//   marginRight: '10px',
+// };
 
 const titleStyle = {
   margin: 0,
