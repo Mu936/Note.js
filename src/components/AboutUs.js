@@ -1,6 +1,7 @@
 import React from 'react';
 
-const About = () => {
+
+const AboutUs = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>About Our Note-Taking App</h1>
@@ -23,7 +24,8 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#f8f9fa', // Light background color
+    
+    backgroundColor: '#pink', // Light background color
     textAlign: 'center',
     padding: '20px',
     transition: 'background-color 0.5s ease',
@@ -50,5 +52,5 @@ const styles = {
   },
 };
 
-export default AboutUs
+export default AboutUs;
 
